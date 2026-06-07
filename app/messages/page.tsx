@@ -80,7 +80,7 @@ export default async function MessagesPage() {
                 <div className="msg-top">
                   {/* Avatar initials */}
                   <div className="msg-avatar" aria-hidden="true">
-                    {m.name.trim().split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase()}
+                   {(m.name ?? '?').split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase()}
                   </div>
                   <div className="msg-meta">
                     <span className="msg-name">{m.name}</span>
