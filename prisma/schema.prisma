@@ -1,0 +1,24 @@
+// prisma/schema.prisma
+// Week 8 — Database schema for contact form messages
+
+//generator client {
+//  provider      = "prisma-client-js"
+//  output        = "../node_modules/.prisma/client"
+//}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Message {
+  id        Int      @id @default(autoincrement())
+  name      String?
+  email     String   @unique
+  message   String
+  createdAt DateTime @default(now())
+}
